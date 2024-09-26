@@ -10,6 +10,7 @@ const TodoApp = () => {
   useEffect(() => {
     loadTasksFromLocalStorage();
     
+    
     const handleFocusIn = (e) => {
       if (e.target.classList.contains('task-input')) {
         const taskDiv = e.target.closest('.task');
@@ -69,7 +70,7 @@ const TodoApp = () => {
     } else {
       localStorage.setItem('tasks', JSON.stringify([]));
     }
-    loadTasksCount([]);
+    loadTasksCount(savedTasks ? JSON.parse(savedTasks) : []);
   };
 
   const loadTasksCount = (tasksToCount) => {
