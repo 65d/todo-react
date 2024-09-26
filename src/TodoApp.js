@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './css/style.css';  // Your CSS file
+import './css/style.css';  
 
 const TodoApp = () => {
   const [tasks, setTasks] = useState([]);
   const [newTaskText, setNewTaskText] = useState('');
   const [draggingTask, setDraggingTask] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('all'); // State for active filter
+  const [activeFilter, setActiveFilter] = useState('all'); 
 
   useEffect(() => {
     loadTasksFromLocalStorage();
@@ -123,7 +123,6 @@ const TodoApp = () => {
     const updatedTasks = [...tasks];
     const draggingTaskIndex = updatedTasks.indexOf(draggingTask);
     
-    // Remove the task being dragged and insert it in the new position
     updatedTasks.splice(draggingTaskIndex, 1);
     updatedTasks.splice(index, 0, draggingTask);
   
